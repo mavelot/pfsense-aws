@@ -72,7 +72,7 @@ done
 IMAGE="$(ls -1tr ./input-image/ | tail -n1)"
 
 echo -e "\n${GREEN}Copy USB Installer image to S3 Bucket...${NC}"
-#aws s3 cp --profile ${PROFILE} ./input-image/${IMAGE} s3://${BUCKET}/${IMAGE}
+aws s3 cp --profile ${PROFILE} ./input-image/${IMAGE} s3://${BUCKET}/${IMAGE}
 
 # Create own specific json for import
 IMPORTSNAPSHOT="import-snapshot_${TIMESTAMP}.json"
