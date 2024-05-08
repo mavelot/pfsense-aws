@@ -64,7 +64,7 @@ for ($i = 1; $i -le 10; $i++) {
 $Image = Get-ChildItem -Path "./input-image/" | Sort-Object -Property LastWriteTime | Select-Object -Last 1 | Select-Object -ExpandProperty Name
 
 Write-Host "`nCopy USB Installer image to S3 Bucket..." -ForegroundColor green
-#aws s3 cp --profile $Profile "./input-image/$Image" "s3://$Bucket/$Image"
+aws s3 cp --profile $Profile "./input-image/$Image" "s3://$Bucket/$Image"
 
 # Create own specific json for import
 $ImportSnapshot = "import-snapshot_$Timestamp.json"
